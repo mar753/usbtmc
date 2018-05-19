@@ -32,7 +32,7 @@ class AutomatedAcquisition:
         rm = visa.ResourceManager()
         devices = rm.list_resources()
         pattern = re.compile("USB[0-9]+")
-        usbList = filter(pattern.match, devices)
+        usbList = list(filter(pattern.match, devices))
         if (len(usbList) <= 0):
             print("No valid USB device found")
             self._initSuccessful = False
@@ -71,7 +71,7 @@ class AutomatedAcquisition:
         channelRawData = self._device.read_raw()
         channelRawData = channelRawData[10:] # Cut header
         print("CH" + str(channelNumber) + " data size:", len(channelRawData))
-        f = open("dataCH" + str(channelNumber) + "_" + str(i) + ".txt", "w")
+        f = open("dataCH" + str(channelNumber) + "_" + str(i) + ".txt", "wb")
         f.write(channelRawData)
         f.close()
 

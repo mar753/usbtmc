@@ -7,8 +7,8 @@ If you would like to use it under Linux (like Ubuntu) where driver for usbtmc de
 ## Requirements
 
 - VISA USBTMC drivers (e.g. NI-VISA)
-- Python - tested with python 2.7.15, but older should work as well
-- PyVISA - for windows
+- Python - tested with Python 2.7.15 and 3.6.5, but older should work as well
+- PyVISA - for Windows
 - Windows environment (Linux with some modifications)
 
 ## Running
